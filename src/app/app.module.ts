@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ExpJsonComponent } from './exp-json/exp-json.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExpJsonComponent
   ],
   imports: [
     BrowserModule,
