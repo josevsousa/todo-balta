@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -8,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(private location: Location){}
+
+  back():void{
+    this.location.back();
+  }
 
 
 }

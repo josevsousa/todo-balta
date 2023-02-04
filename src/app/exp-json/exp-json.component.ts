@@ -10,11 +10,11 @@ import { CarsService } from '../services/cars.service';
 export class ExpJsonComponent {
 
   title = 'todo';
+  
   // carros: iCar[] = [];
 
-  constructor(private carService: CarsService){
-    this.obterCarros();
-  }
+  constructor(
+    private carService: CarsService ){}
 
   
   obterCarros(){
@@ -54,5 +54,6 @@ export class ExpJsonComponent {
     this.carService.deleteCarro(2)
       .subscribe(res => console.log(res + "deletado"));
   }
+
 
 }
