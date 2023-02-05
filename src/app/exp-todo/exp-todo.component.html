@@ -1,0 +1,24 @@
+<h1>Todo works!</h1>
+
+<p *ngIf="this.todos.length == 0"><small>Voce não tem nenhuma tarefa hoje!</small></p>
+    
+<ul *ngFor="let todo of this.todos">
+    <li>{{todo.id}} 
+        {{todo.tarefa}}  
+        <button *ngIf="!todo.done" (click)="markAsDone(todo)">concluir</button>
+        <button *ngIf="todo.done" (click)="markAsUnDone(todo)">refazer</button> 
+        <button (click)="this.remove(todo)">remove</button> </li>
+</ul>
+
+<!-- FORM -->
+<form [formGroup]="formulario">
+    <fieldset>
+        <label>Tarefa: </label>
+        <input type="text" 
+                placeholder="Titulo da Tarefa" 
+                maxlength="60" 
+                formControlName="tarefa" >
+        <small *ngIf="formulario.get('tarefa')?.invalid && !formulario.get('tarefa')?.pristine " >Campo invalido</small>
+        <button [disabled]="formulario.invalid" (click)="add()">Salvar</button>
+    </fieldset> 
+

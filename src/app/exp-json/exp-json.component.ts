@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { iCar } from '../models/carro';
-import { CarsService } from '../services/cars.service';
+import { CarsService } from '../services/cars-jsonServe.service';
 
 @Component({
   selector: 'app-exp-json',
@@ -11,19 +11,21 @@ export class ExpJsonComponent {
 
   title = 'todo';
   
-  // carros: iCar[] = [];
+  // carros: any[] = [];
 
   constructor(
-    private carService: CarsService ){}
+    private carService: CarsService ){
+      this.obterCarros();
+    }
 
   
   obterCarros(){
     return this.carService.obterCarros()
-      .subscribe(car => console.log(car))
+      .subscribe(car => console.log(car));
   }
 
   obterCarro(){
-    return this.carService.obterCarro(2)
+    return this.carService.obterCarro(5)
       .subscribe(carro => console.log(carro))
   }
 

@@ -16,4 +16,7 @@ export class InicioComponent {
   localStorage(): void{
     this.router.navigate(['/localStorage']);
   }
+  todo(): void{
+    this.router.navigate(['/todo'])
+  }
 }
